@@ -12,7 +12,9 @@
   </head>
 
   <body>
-    <main id="main">My ID is "main"!</main>
+    
+    <main id="main">My ID is "main"!
+      </main>
 
     <br />
 
@@ -37,5 +39,51 @@
         </div>
       </div>
     </div>
+    <script> 
+       //I was clicked on My ID is "main"!
+       const main = document.getElementById('main')
+       
+       main.addEventListener('click', function(event)
+         {
+           alert('I was clicked!')
+         })
+     
+      //Responsive input bar
+      const input = document.querySelector('input')
+      
+      input.addEventListener('keydown', function(e) {
+        
+        console.log(e.which);
+      })
+      
+      // Prevent input from receiving g's
+      input.addEventListener('keydown', function(e) {
+        if (e.which === 71) {
+          return e.preventDefault()
+        }
+      })
+      
+      /* Bubbles up through divs when clicked - remove function e.stopPropagation to bubble as explained by lesson */
+      let divs = document.querySelectorAll('div')
+      
+      function bubble(e) {
+        e.stopPropagation()
+        console.log(this.firstChild.nodeValue.trim() + ' bubbled')
+      }
+      
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', bubble)
+      }
+      
+      /* Propogates from the top of the page towards target node - Delete for stopPropagation to work as explained by lesson */
+      function capture(e) {
+        console.log(this.firstChild.nodeValue.trim() + ' captured')
+      }
+  
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', capture, true)
+      }
+      
+      </script>
   </body>
 </html>
