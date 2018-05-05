@@ -63,7 +63,7 @@
         }
       })
       
-      // Bubbles up through divs when clicked
+      /* Bubbles up through divs when clicked - remove function e.stopPropagation to bubble as explained by lesson */
       let divs = document.querySelectorAll('div')
       
       function bubble(e) {
@@ -75,7 +75,7 @@
         divs[i].addEventListener('click', bubble)
       }
       
-      // Propogates from the top of the page towards target node
+      /* Propogates from the top of the page towards target node - Delete for stopPropagation to work as explained by lesson */
       function capture(e) {
         console.log(this.firstChild.nodeValue.trim() + ' captured')
       }
