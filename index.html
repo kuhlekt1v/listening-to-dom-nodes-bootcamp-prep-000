@@ -12,7 +12,9 @@
   </head>
 
   <body>
-    <main id="main">My ID is "main"!</main>
+    
+    <main id="main">My ID is "main"!
+      </main>
 
     <br />
 
@@ -37,5 +39,30 @@
         </div>
       </div>
     </div>
+    <script> 
+       //I was clicked on My ID is "main"!
+       const main = document.getElementById('main')
+       
+       main.addEventListener('click', function(event)
+         {
+           alert('I was clicked!')
+         })
+     
+      //Responsive input bar
+      const input = document.querySelector('input')
+      
+      input.addEventListener('keydown', function(e) {
+        
+        console.log(e.which)
+      })
+      
+      // Prevent input from receiving g's
+      input.addEventListener('keydown', function(e) {
+        if (e.which === 71) {
+          return e.preventDefault()
+        }
+      })
+     
+      </script>
   </body>
 </html>
