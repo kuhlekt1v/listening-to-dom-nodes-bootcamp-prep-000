@@ -63,6 +63,7 @@
         }
       })
       
+      // Bubbles up through divs when clicked
       let divs = document.querySelectorAll('div')
       
       function bubble(e) {
@@ -77,6 +78,7 @@
         console.log(this.firstChild.nodeValue.trim() + ' captured')
       }
       
+      // Propogates from the top of the page towards target node
       for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener('click', capture, true)
       }
