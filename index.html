@@ -47,27 +47,22 @@
          {
            alert('I was clicked!')
          })
-   
-
      
       //Responsive input bar
-     
-      const input = document.querySelector('input'
-      )
+      const input = document.querySelector('input')
+      
       input.addEventListener('keydown', function(e) {
         
         console.log(e.which);
       })
       
       // Prevent input from receiving g's
-      
-        
-input.addEventListener('keydown', function(e) {
-  if (e.which === 71) {
-    return e.preventDefault()
-  }
-})
-      
+      input.addEventListener('keydown', function(e) {
+        if (e.which === 71) {
+          return e.preventDefault()
+        }
+      })
+     
       </script>
   </body>
 </html>
